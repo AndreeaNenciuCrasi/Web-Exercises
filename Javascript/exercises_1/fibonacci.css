@@ -1,0 +1,16 @@
+.selected{
+    color: green;
+}
+
+.number-even{
+    color: red;
+}
+.number-odd{
+    color: blue;
+}
+
+#firstContainer, #container, #fibonacci-container, #fibonacci-container2{
+    border: 2px solid greenyellow;
+    margin-left: 350px;
+    margin-right: 360px;
+}

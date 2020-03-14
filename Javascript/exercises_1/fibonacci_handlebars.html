@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+    <!-- Include Handlebars js file before your script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+    <script id="fibonacci-template" type="text/x-handlebars-template">
+        <ul class="fibonacci-list">
+            {{#each items}}
+                <li class="number-{{this % 2 === 0 ? 'even': 'odd'}}">{{this}}</li>
+            {{/each}}
+            </div>
+    </script>
+</head>
+<body>
+    <div id="fibonacci-container">
+
+    </div>
+
+    <script type="text/javascript" src="fibonacci_handlebars.js"></script>
+</body>
+</html>

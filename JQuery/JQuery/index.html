@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<!--    <ul>-->
+<!--        <div></div>-->
+<!--        <li id="foo1">foo</li>-->
+<!--        <li id="bar1">bar</li>-->
+<!--        <li id="baz1">baz</li>-->
+<!--        <div></div>-->
+<!--    </ul>-->
+        <ul>
+            <div class="test"></div>
+            <li id="foo1">foo</li>
+            <li id="bar1" class="test">bar</li>
+            <li id="baz1">baz</li>
+            <div class="test"></div>
+        </ul>
+        <div id="last"></div>
+    <script src="jquery.js"></script>
+    <script>
+        // var foo = $( "#foo1" );
+        //
+        // console.log( "Index: " + foo.index() ); // 1
+        //
+        // var listItem = $( "li" );
+        //
+        // // This implicitly calls .first()
+        // console.log( "Index: " + listItem.index() ); // 1
+        // console.log( "Index: " + listItem.first().index() ); // 1
+        //
+        // var div = $( "div" );
+        //
+        // // This implicitly calls .first()
+        // console.log( "Index: " + div.index() ); // 0
+        // console.log( "Index: " + div.first().index() ); // 0
+
+        var foo = $( "li" );
+
+        // This implicitly calls .first()
+        console.log( "Index: " + foo.index( "li" ) ); // 0
+        console.log( "Index: " + foo.first().index( "li" ) ); // 0
+
+        var baz = $( "#baz1" );
+        console.log( "Index: " + baz.index( "li" )); // 2
+
+        var listItem = $( "#bar1" );
+        console.log( "Index: " + listItem.index( ".test" ) ); // 1
+
+        var div = $( "#last" );
+        console.log( "Index: " + div.index( "div" ) ); // 2
+    </script>
+</body>
+</html>

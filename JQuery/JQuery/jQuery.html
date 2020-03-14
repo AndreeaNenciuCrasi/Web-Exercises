@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <style>
+        a.new {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p>To delete/to empty</p>
+    <ul id="myList">
+
+    </ul>
+    </div>
+
+    <a href="http://jquery.com/">jQuery</a>
+<script src="jquery.js"></script>
+<script>
+
+    $("p").css("border", "2px solid blue");
+    var myItems = [];
+    var myList = $( "#myList" );
+
+    for ( var i = 0; i < 100; i++ ) {
+        myItems.push( "<li>item " + i + "</li>" );
+    }
+
+    myList.append( myItems.join( "" ) );
+
+    $( "p" ).on("mouseover", function(){
+        $( "p" ).empty();
+    });
+
+    var lines = $( "li" );
+
+    alert( lines.length );
+    lines.eq(50).css("background-color", "pink");
+
+    var firstLiElem = $( "li" ).get( 0 );
+    console.log(firstLiElem);
+
+    var liElem = $( "li" )[ 1 ];
+    console.log(liElem);
+
+    var logo1 = $( "p" );
+    var logo1Elem = logo1.get( 0 );
+
+    var logo2 = $( "p" );
+    var logo2Elem = logo2.get( 0 );
+
+    alert( logo1Elem === logo2Elem );
+
+
+    // $( "p" ).on("mouseover", function(){
+    //     $( "p" ).remove();
+    // });
+    // $( "p" ).remove();
+
+    // $( "<p>This is a new paragraph</p>" ).appendTo( "#content" );
+    // $( "<li class=\"new\">new list item</li>" ).insertAfter( "div p" );
+    // $( "<a/>", {
+    //     html: "This is a <strong>new</strong> link",
+    //     "class": "new",
+    //     href: "https://www.youtube.com/watch?v=g1hEszuZ4lo"
+    // }).insertAfter( "div li" );
+
+
+    // $( window ).on( "load", function() {
+    //     console.log( "window loaded" );
+    // });
+    // $( document ).ready(function() {
+    //
+    //     $( "a" ).click(function( event ) {
+    //
+    //         alert( "As you can see, the link no longer took you to jquery.com" );
+    //
+    //         event.preventDefault();
+    //         $( "a" ).addClass( "test" );
+    //         // $( "a" ).removeClass( "test" );
+    //     });
+    //
+    //     // $( "a" ).click(function( event ) {
+    //     //
+    //     //     event.preventDefault();
+    //     //
+    //     //     $( this ).hide( "slow" );
+    //     //
+    //     // });
+    //
+    // });
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            transition: width 1s;
+            width: 100px;
+        }
+
+        .wide {
+            width: 300px;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="button" id="elem" onclick="this.classList.toggle('wide')" value="Click me">
+    <input type="button" value="Click me" id="elem2">
+    <input type="button" onclick="alert(event.type)" value="Event type">
+    <button id="elem3">Click me</button>
+    <button id="elem4">Click me</button>
+
+    <script>
+
+        class Menu {
+            handleEvent(event) {
+                switch(event.type) {
+                    case 'mousedown':
+                        elem4.innerHTML = "Mouse button pressed";
+                        break;
+                    case 'mouseup':
+                        elem4.innerHTML += "...and released.";
+                        break;
+                }
+            }
+        }
+
+        let menu = new Menu();
+        elem4.addEventListener('mousedown', menu);
+        elem4.addEventListener('mouseup', menu);
+
+        elem3.addEventListener('click', {
+            handleEvent(event) {
+                alert(event.type + " at " + event.currentTarget);
+            }
+        });
+
+        elem2.onclick = function(event) {
+            // show event type, element and coordinates of the click
+            alert(event.type + " at " + event.currentTarget);
+            alert("Coordinates: " + event.clientX + ":" + event.clientY);
+        };
+
+        elem.ontransitionend = function() {
+            alert("DOM property"); // doesn't work
+
+        };
+
+        elem.addEventListener("transitionend", function() {
+            alert("addEventListener"); // shows up when the animation finishes
+
+        });
+    </script>
+</body>
+</html>
